@@ -1,4 +1,5 @@
 define ufw::allow($proto="tcp", $port="all", $ip="", $from="any") {
+  include ufw
 
   if $::ipaddress_eth0 != undef {
     $ipadr = $ip ? {
